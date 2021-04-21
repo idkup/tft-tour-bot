@@ -4,6 +4,7 @@ class TourParticipant:
         self._discord_id = discord_id
         self._name = name
         self._score = 0
+        self._placements = []
         self._confirmed = False
 
     def get_discord_id(self) -> int:
@@ -17,6 +18,10 @@ class TourParticipant:
     def get_score(self) -> int:
         """Returns the participant's current score."""
         return self._score
+
+    def get_placements(self) -> list:
+        """Returns the participant's placements."""
+        return self._placements
 
     def get_confirmed(self) -> bool:
         """Returns if the participant has confirmed their participation."""
@@ -37,3 +42,7 @@ class TourParticipant:
     def set_confirmed(self, confirmed: bool):
         """Sets the participant's confirmation status."""
         self._confirmed = confirmed
+
+    def add_placement(self, placement: int):
+        """Adds a placement to the placement list."""
+        self._placements.append(placement)
