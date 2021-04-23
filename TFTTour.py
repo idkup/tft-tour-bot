@@ -5,10 +5,11 @@ class TFTTour:
     def __init__(self, name: str, channel_ids: list, tour_role_id: int):
         """Creates a new tournament object"""
         self._name = name
-        self._log_channel_id = channel_ids[0]
-        self._results_channel_id = channel_ids[1]
-        self._scoring_channel_id = channel_ids[2]
-        self._chat_channel_id = channel_ids[3]
+        self._command_channel_id = channel_ids[0]
+        self._log_channel_id = channel_ids[1]
+        self._results_channel_id = channel_ids[2]
+        self._scoring_channel_id = channel_ids[3]
+        self._chat_channel_id = channel_ids[4]
         self._tour_role_id = tour_role_id
         self._participants = []
         self._phase = 0
@@ -16,6 +17,10 @@ class TFTTour:
     def get_name(self) -> str:
         """Returns the tournament's name."""
         return self._name
+
+    def get_command_channel(self) -> int:
+        """Returns the ID of the command channel."""
+        return self._command_channel_id
     
     def get_log_channel(self) -> int:
         """Returns the ID of the log channel."""
